@@ -1,11 +1,49 @@
-<div align="center">
+# التربة القاتمة (Grim Soil - Chronicles of Ash)
+## دليل المطور والتشغيل المحلي عبر Termux (على هاتف ذي صلاحيات Root)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+لعبة تقمص أدوار نصية ملحمية في عالم فنتازيا مظلمة قاسية، مخصصة 100% للهواتف الذكية مع توليد إجرائي ذكي مدعوم بنموذج **Gemini 3.5 Flash-Lite**.
 
-  <h1>Built with AI Studio</h2>
+---
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 📱 تشغيل اللعبة عبر تطبيق Termux على هاتفك (مع ميزات الروت)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+الهاتف يمتلك صلاحيات **Root**، مما يمنحك سرعة واستقراراً فائقاً لتشغيل السيرفر المحلي:
 
-</div>
+### 1. إعداد البيئة وتثبيت Node.js:
+افتح Termux واكتب:
+```bash
+pkg update -y && pkg install -y nodejs
+```
+
+### 2. الوصول لمجلد المشروع:
+إذا وضعت مجلد اللعبة في ذاكرة الهاتف (مجلد التنزيلات مثلاً):
+```bash
+termux-setup-storage
+cd /sdcard/Download/grim-soil
+```
+
+### 3. تثبيت الحزم وتشغيل السيرفر:
+```bash
+npm install
+npm run dev
+```
+
+### 4. ميزة الروت وإبقاء السيرفر نشطاً في الخلفية (Wake Lock):
+لمنع أندرويد من إيقاف السيرفر عند قفل الشاشة:
+```bash
+termux-wake-lock
+```
+
+### 5. فتح اللعبة:
+افتح متصفح هاتفك المفضل (Chrome / Kiwi / Firefox) واذهب إلى:
+```
+http://localhost:3000
+```
+اضغط على زر **«ملء الشاشة ⛶»** في شاشة البداية لتتحول اللعبة إلى تطبيق هاتف كامل بدون شريط المتصفح!
+
+---
+
+## 🤖 معلومات النموذج والمحرك:
+- **المحرك الأساسي:** `gemini-3.5-flash-lite`
+- **حفظ الطاقة والتوكنات:** كبسولة تلخيص بيانات خفيفة للغاية، مع سرد قصصي ممتع وغني أثناء المغامرة.
+- **وثيقة تسليم الذكاء الاصطناعي:** راجع ملف `AI_HANDOVER.md` لمعرفة كافة القيود والقواعد المعمارية الثابتة.
